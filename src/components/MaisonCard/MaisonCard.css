@@ -1,0 +1,11 @@
+/* src/components/MaisonCard/MaisonCard.css */
+.maison-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+.maison-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
