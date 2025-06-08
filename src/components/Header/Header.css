@@ -1,0 +1,29 @@
+       header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        z-index: 1000; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+       }
+       
+       header nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: black;
+       }
+
+       nav a {
+       color: black;
+       }
+       nav a:hover {
+       text-decoration: underline;
+       color: black;
+       }

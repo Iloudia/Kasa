@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Maison from './components/Maison/Maison';
-import Accueil from './components/Accueil/Accueil';
+import Maison from './pages/Maison/Maison';
+import Accueil from './pages/Accueil/Accueil';
 import Header from './components/Header/Header';
-import Erreur from './components/Erreur/Erreur';
+import Erreur from './pages/Erreur/Erreur';
+import About from './pages/Propos/Propos';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
@@ -11,8 +14,10 @@ function App() {
       <Routes>
         <Route path="/*" element={<Erreur />} />
         <Route path="/" element={<Accueil />} />
+        <Route path="/about" element={<About />} />
         <Route path="/maison" element={<Maison />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

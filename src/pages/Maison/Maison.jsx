@@ -1,4 +1,4 @@
-// src/components/MaisonCard/MaisonCard.jsx
+
 import { Link } from 'react-router-dom';
 import './Maison.css';
 
