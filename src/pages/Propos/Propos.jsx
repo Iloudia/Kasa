@@ -8,6 +8,7 @@ export default function Propos() {
   const [openFidelite, setOpenFidelite] = useState(false);
   const [openRespect, setOpenRespect] = useState(false);
   const [openService, setOpenService] = useState(false);
+  const [openSecurity, setOpenSecurity] = useState(false);
 
   return (
     <div>
@@ -76,12 +77,12 @@ export default function Propos() {
           <div className="depliant-item">
             <div
               className="depliant-header"
-              onClick={() => setOpenService(!openService)}
+              onClick={() => setOpenSecurity(!openSecurity)}
             >
               <span>Sécurité</span>
-              {openService ? <FiChevronDown /> : <FiChevronUp />}
+              {openSecurity ? <FiChevronDown /> : <FiChevronUp />}
             </div>
-            {openService && (
+            {openSecurity && (
               <div className="depliant-text">
                 <p>
                   La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
