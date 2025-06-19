@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Maison from './pages/Maison/Maison';
+import Maison from './components/Maison/Maison';
 import Accueil from './pages/Accueil/Accueil';
 import Header from './components/Header/Header';
 import Erreur from './pages/Erreur/Erreur';
@@ -15,7 +15,7 @@ function App() {
         <Route path="/*" element={<Erreur />} />
         <Route path="/" element={<Accueil />} />
         <Route path="/about" element={<About />} />
-        <Route path="/maison" element={<Maison />} />
+        <Route path="/logement/:id" element={<Maison />} />
       </Routes>
       <Footer />
     </BrowserRouter>

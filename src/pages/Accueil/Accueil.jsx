@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
 import './Accueil.css';
-import banner from '../../assets/eric-muhr-P_XxsdVgtpQ-unsplash.jpg';
+import BgBanner from '../../assets/eric-muhr-P_XxsdVgtpQ-unsplash.jpg';
 import logements from '../../assets/data/logements.js';
+import Banner from '../../components/banner.jsx';
 
 function Accueil() {
   return (
     <div className="home">
-      <section className="banner" style={{ backgroundImage: `url(${banner})` }}>
-        <h1><b>Chez vous, partout et ailleurs</b></h1>
-      </section>
-
+      <Banner title={"Chez vous, partout et ailleurs"} bgImg={BgBanner} />
       <section className="card-container">
         {logements.map(({ id, title, cover }) => (
           <Link
