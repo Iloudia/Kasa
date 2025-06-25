@@ -1,15 +1,37 @@
 footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
+  background-color: black;
+  color: white !important;
+  text-align: center;
+  padding: 60px 20px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-footer p {
-    font-size: 24px;
-    color: white;
-}
-
+/* Logo */
 .nav-logo-footer {
   filter: brightness(0) invert(1);
+  max-width: 150px;
+}
+
+.footer-desktop {
+  display: block;
+  color: white !important;
+}
+
+.footer-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: block;
+    color: white !important;
+  }
 }

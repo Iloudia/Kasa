@@ -9,7 +9,8 @@ function Footer() {
       <Link to="/">
         <img src={logo} alt="Kasa Logo" className="nav-logo-footer" />
       </Link>
-      <p>© 2020 Kasa. All rights reserved</p>
+      <p className="footer-desktop">© 2020 Kasa. All rights reserved</p>
+      <p className="footer-mobile">© 2020 Kasa. All<br /> rights reserved</p>
     </footer>
   );
 }

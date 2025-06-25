@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Accueil.css';
 import BgBanner from '../../assets/eric-muhr-P_XxsdVgtpQ-unsplash.jpg';
 import logements from '../../assets/data/logements.js';
-import Banner from '../../components/banner.jsx';
+import Banner from '../../components/Banner/banner.jsx';
 
 function Accueil() {
   return (
@@ -12,6 +12,7 @@ function Accueil() {
         {logements.map(({ id, title, cover }) => (
           <Link
             to={`/logement/${id}`}
+            key={id}
             className="location-card"
             style={{ backgroundImage: `url(${cover})` }}
           >

@@ -2,42 +2,34 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import logements from '../../assets/data/logements';
 import './Maison.css';
-import Dropdown from '../../components/dropdown.jsx';
+import Dropdown from '../Dropdown/dropdown.jsx';
+import Carousel from '../Carousel/Carousel.jsx';
+import { Navigate } from 'react-router-dom';
+import Host from '../Host/Host.jsx';
 
 function MaisonCard() {
   const { id } = useParams();
-  const logement = logements.find((l) => l.id === id);
+  const logement = logements.find((log) => log.id === id);
   const [index, setIndex] = useState(0);
 
-  if (!logement) return <h2>Logement introuvable</h2>;
+if (!logement) {
+  return <Navigate to="/*" replace />;
+}
 
   const total = logement.pictures.length;
   const full = Number(logement.rating);
   const empty = 5 - full;
 
-  const next = () => setIndex((i) => (i + 1) % total);
-  const prev = () => setIndex((i) => (i - 1 + total) % total);
 
   return (
     <div className="logement-page">
       {/*Carousel */}
-      <div className="gallery">
-        <img
-          src={logement.pictures[index]}
-          alt={`${logement.title} – ${index + 1}`}
-          className="gallery-img"
-        />
-
-        {total > 1 && (
-          <>
-            <button className="arrow left" onClick={prev}>‹</button>
-            <button className="arrow right" onClick={next}>›</button>
-            <span className="counter">
-              {index + 1}/{total}
-            </span>
-          </>
-        )}
-      </div>
+      <Carousel
+        pictures={logement.pictures}
+        title={logement.title}
+        index={index}
+        setIndex={setIndex}
+      />
 
       {/*En-tête*/}
       <div className="header">
@@ -55,14 +47,7 @@ function MaisonCard() {
         </div>
 
         <div className="right">
-          <div className="host">
-            <p className="host-name">{logement.host.name}</p>
-            <img
-              src={logement.host.picture}
-              alt={logement.host.name}
-              className="host-picture"
-            />
-          </div>
+         <Host name={logement.host.name} picture={logement.host.picture} />
 
           <div className="rating">
             {Array.from({ length: full }).map((_, i) => (

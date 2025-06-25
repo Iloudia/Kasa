@@ -1,10 +1,9 @@
 import bgImg from '../../assets/apropos-banner.jpg';
 import './Propos.css';
-import Banner from '../../components/banner.jsx';
-import Dropdown from '../../components/dropdown.jsx';
-
+import Banner from '../../components/Banner/banner.jsx';
+import Dropdown from '../../components/Dropdown/dropdown.jsx';
+import '../../components/Dropdown/Dropdown.css';
 export default function Propos() {
-
 
   return (
 

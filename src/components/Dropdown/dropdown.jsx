@@ -15,9 +15,9 @@ function Dropdown({ title, content }) {
             </div>
             {isOpen && (
                 <div className="dropdown-text">
-                    <p>
+                    <div>
                         {content}
-                    </p>
+                    </div>
                 </div>
             )}
         </div>
