@@ -1,7 +1,7 @@
 /* gallery*/
 .gallery {
   position: relative;
-  margin-top: 0px;
+  margin-top: 100px;
   height: 500px;
   border-radius: 25px;
   overflow: hidden;
