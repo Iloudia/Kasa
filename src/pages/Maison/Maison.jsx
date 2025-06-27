@@ -1,22 +1,32 @@
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
-import logements from '../../assets/data/logements';
-import './Maison.css';
-import Dropdown from '../Dropdown/dropdown.jsx';
-import Carousel from '../Carousel/Carousel.jsx';
 import { Navigate } from 'react-router-dom';
-import Host from '../Host/Host.jsx';
+import { useState } from 'react';
+import { useEffect } from 'react';
+
+
+import logements from '../../assets/data/logements.js';
+import './Maison.css';
+
+import Dropdown from '../../components/Dropdown/dropdown.jsx';
+import Carousel from '../../components/Carousel/Carousel.jsx';
+import Host from '../../components/Host/Host.jsx';
 
 function MaisonCard() {
+
   const { id } = useParams();
   const logement = logements.find((log) => log.id === id);
-  const [index, setIndex] = useState(0);
+  const [redirect, setRedirect] = useState(false);
 
-if (!logement) {
-  return <Navigate to="/*" replace />;
-}
+useEffect(() => {
+    if (!logement) {
+      setRedirect(true);
+    }
+  }, [logement]);
 
-  const total = logement.pictures.length;
+  if (redirect) {
+    return <Navigate to="/erreur" replace />;
+  }
+
   const full = Number(logement.rating);
   const empty = 5 - full;
 
@@ -26,9 +36,6 @@ if (!logement) {
       {/*Carousel */}
       <Carousel
         pictures={logement.pictures}
-        title={logement.title}
-        index={index}
-        setIndex={setIndex}
       />
 
       {/*En-tête*/}

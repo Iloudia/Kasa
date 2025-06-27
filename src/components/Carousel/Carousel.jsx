@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import './Carousel.css';
 
-function Carousel({ pictures, title, index, setIndex }) {
+function Carousel({ pictures}) {
   const total = pictures.length;
+  const [index, setIndex] = useState(0);
 
   const next = () => setIndex((i) => (i + 1) % total);
   const prev = () => setIndex((i) => (i - 1 + total) % total);
@@ -10,7 +12,7 @@ function Carousel({ pictures, title, index, setIndex }) {
     <div className="gallery">
       <img
         src={pictures[index]}
-        alt={`${title} – ${index + 1}`}
+        alt={`Photo ${index + 1}`}
         className="gallery-img"
       />
 
