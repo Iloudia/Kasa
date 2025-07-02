@@ -103,6 +103,43 @@
   margin: 0;
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .logement-page {
+    width: 85%;
+  }
+
+  .dropdowns {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .right {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 300px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .rating {
+    margin-top: 0;
+  }
+
+   .rating .star {
+    font-size: 18px;
+  }
+
+  .host {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .host-name {
+    text-align: left;
+  }
+}
+
 
 @media (max-width: 768px) {
 
@@ -121,6 +158,10 @@
   .rating {
     margin: 0;
   } 
+
+   .rating .star {
+    font-size: 15px;
+  }
 
  .logement-page {
     width: 90%;
