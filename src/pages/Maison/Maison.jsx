@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 
 import logements from '../../assets/data/logements.js';
@@ -15,15 +13,8 @@ function MaisonCard() {
 
   const { id } = useParams();
   const logement = logements.find((log) => log.id === id);
-  const [redirect, setRedirect] = useState(false);
 
-useEffect(() => {
-    if (!logement) {
-      setRedirect(true);
-    }
-  }, [logement]);
-
-  if (redirect) {
+  if (!logement) {
     return <Navigate to="/erreur" replace />;
   }
 
@@ -54,7 +45,7 @@ useEffect(() => {
         </div>
 
         <div className="right">
-         <Host name={logement.host.name} picture={logement.host.picture} />
+          <Host name={logement.host.name} picture={logement.host.picture} />
 
           <div className="rating">
             {Array.from({ length: full }).map((_, i) => (

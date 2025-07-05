@@ -12,10 +12,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/*" element={<Erreur />} />
         <Route path="/" element={<Accueil />} />
         <Route path="/about" element={<About />} />
         <Route path="/logement/:id" element={<Maison />} />
+        <Route path="*" element={<Erreur />} />
       </Routes>
       <Footer />
     </BrowserRouter>

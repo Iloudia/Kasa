@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Carousel.css';
 
-function Carousel({ pictures}) {
+function Carousel({ pictures }) {
   const total = pictures.length;
   const [index, setIndex] = useState(0);
 
